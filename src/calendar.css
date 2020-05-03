@@ -1,0 +1,82 @@
+body {
+    background-color: gainsboro;
+}
+
+.calendar-container {
+    display: table;
+    margin: 0 auto;
+}
+
+.calendar-header {
+    margin: 20px;
+    text-align: center;
+}
+
+.calendar-header .header-data {
+    margin: 5px;
+    font-weight: 400;
+}
+
+.calendar-side-bar {
+    left: 3%;
+    margin-top: 30px;
+    /* margin: 5% 20px 100% 10px; */
+    position: absolute;
+    float: left;
+}
+
+.sb-button {
+    background-color: cadetblue;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.calendar-base {
+    /* position: relative; */
+    /* margin-left: 10%; */
+    width: 850px;
+    height: 600px; 
+}
+
+.block-calendar {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: cadetblue;
+    /* text-decoration: none; */
+    display: inline-block;
+}
+
+.bl-h2 {
+    margin: 3px 0px 0px 5px;
+}
+
+.bl-h3 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    font-size: 90%;
+}
+
+.bl-p {
+    margin-top: 0px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+}
+
+.calendar-footer {
+    margin: 0px 0px 0px 5px;
+}
