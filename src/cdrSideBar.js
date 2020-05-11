@@ -3,10 +3,10 @@ import React from 'react';
 const CalendarSideBar = ({date}) => (
     <div className="calendar-side-bar">
       <a href="#" className='sb-button'>
-      Prev
+        Prev
       </a>
       <a href="#" className='sb-button'>
-      Next
+        Next
       </a>
     </div>
 );

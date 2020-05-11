@@ -2,10 +2,10 @@ body {
     background-color: gainsboro;
 }
 
-.calendar-container {
+/* .calendar-container {
     display: table;
     margin: 0 auto;
-}
+} */
 
 .calendar-header {
     margin: 20px;
@@ -35,48 +35,54 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
   }
 
-.calendar-base {
-    /* position: relative; */
-    /* margin-left: 10%; */
-    width: 850px;
-    height: 600px; 
+.calendar-grid-container {
+    display: grid;
+    grid-gap: 10px;
+    margin: 0 auto;
+    
+
+    grid-template-columns: auto auto auto auto auto auto auto;
+    padding: 10px;
+    width: 820px;
+    height: 600px;
 }
 
-.block-calendar {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+.calendar-grid-item {
     background-color: white;
     border-radius: 5px;
     border-style: solid;
     border-color: cadetblue;
-    /* text-decoration: none; */
     display: inline-block;
+    font-size: 30px;
+    text-align: center;
+
+    width: 100px;
+    height: 100px;
 }
 
 .bl-h2 {
-    margin: 3px 0px 0px 5px;
+    font-size: 90%;
+    text-align: left;
+    margin: 2px 0px 0px 5px;
 }
 
 .bl-h3 {
-    margin-top: 10px;
-    margin-bottom: 0px;
-    margin-left: 2px;
-    font-size: 90%;
+    font-size: 50%;
+    text-align: left;
+    margin: 10px 0px 0px 5px;
 }
 
 .bl-p {
-    margin-top: 0px;
-    margin-bottom: 2px;
-    margin-left: 2px;
+    text-align: left;
     font-size: small;
-    position: absolute;
-    bottom: 0;
+    margin: 5px 0px 0px 5px;
 }
 
 .calendar-footer {
     margin: 0px 0px 0px 5px;
+    text-align: center;
 }
