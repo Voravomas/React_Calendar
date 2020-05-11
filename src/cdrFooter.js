@@ -2,8 +2,7 @@ import React from 'react';
 
 const CalendarFooter = ({description}) => (
     <div className="calendar-footer">
-        <h2 className="ft-h2">Task name: {description.task.taskName}</h2>
-        <p className="ft-p">Task description: {description.task.taskDescription}</p>
+        <h2 className="ft-h2">Total number of tasts during this month: 0</h2>
     </div>
 );
 

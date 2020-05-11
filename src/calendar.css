@@ -18,11 +18,12 @@ body {
 }
 
 .calendar-side-bar {
-    left: 3%;
+    left: 1%;
     margin-top: 30px;
     /* margin: 5% 20px 100% 10px; */
     position: absolute;
     float: left;
+    width: 200px;
 }
 
 .sb-button {
@@ -37,15 +38,19 @@ body {
     font-size: 16px;
     margin-left: 2px;
     margin-right: 2px;
+    margin-top: 2px;
+
+    width: 50px;
   }
 
 .calendar-grid-container {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 15px;
     margin: 0 auto;
     
 
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
     padding: 10px;
     width: 820px;
     height: 600px;
@@ -59,9 +64,6 @@ body {
     display: inline-block;
     font-size: 30px;
     text-align: center;
-
-    width: 100px;
-    height: 100px;
 }
 
 .bl-h2 {
@@ -85,4 +87,61 @@ body {
 .calendar-footer {
     margin: 0px 0px 0px 5px;
     text-align: center;
+}
+
+.big-year {
+    text-align: center;
+}
+
+.all-months {
+    display: grid;
+    grid-gap: 15px;
+    margin: 0 auto;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    padding: 10px;
+    /* width: 900px;
+    height: 600px; */
+}
+
+.each-month {
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+    border-color: cadetblue;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.date{
+    text-align: center;
+    font-size: 30px;
+}
+
+.notes {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+    border-color: cadetblue;
+    
+}
+
+.notes-title {
+    text-align: center;
+}
+
+.notes-main {
+    margin-left: 3px;
+}
+
+.btns {
+    margin: 20px auto;
+    width: 200px;   
 }
