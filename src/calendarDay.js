@@ -4,31 +4,30 @@ import {
     useParams
 } from "react-router-dom";
 
-export default function CalendarDay() {
-    let {year} = useParams();
-    let {month} = useParams();
-    let {day} = useParams();
-    var thisDay = new Date(year, month, day);
-    console.log(year, month, day);
+import TaskList from './taskList';
 
-  return (
-    <div class="dayNotes">
-        <h3 class="date">{weekDays[thisDay.getDay()]}, {day} {monthName[month]} {year} </h3>
-      <div class="notes">
-        <h2 class="notes-title">Wash a car</h2>
-        <hr class="notes-hr"></hr>
-        <p class="notes-main">Description: Wash a carWash a carWash a car</p>
-      </div>
-      <div class="btns">
-        <a className='sb-button'>
-        <Link to="/">Prev day</Link>
+export default class CalendarDay extends React.Component {
+  constructor(props) {
+    super(props);
+    this.year = props.match.params.year;
+    this.month = props.match.params.month;
+    this.day = props.match.params.day;
+    this.thisDay = new Date(this.year, this.month, this.day);
+    this.linkBack = "/" + this.year + "/" + this.month;
+    this.allTasks = ["go for a walk", "sleep"];
+  }  
+
+  render() {
+    return (
+      <div class="dayNotes">
+        <h3 class="date">{weekDays[this.thisDay.getDay()]}, {this.day} {monthName[this.month]} {this.year} </h3>
+        <TaskList></TaskList>
+        <a className='day-button'>
+          <Link className="linkBtn" to={this.linkBack}>Get back</Link>
         </a>
-        <a className='sb-button'>
-        <Link to="/">Next day</Link>
-        </a>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 const weekDays = [

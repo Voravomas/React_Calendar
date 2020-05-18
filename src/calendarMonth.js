@@ -1,10 +1,5 @@
 import React from 'react';
 
-import {
-    Link,
-    useParams
-} from "react-router-dom";
-
 import './calendar.css';
 
 import CalendarHeader from './cdrHeader';
@@ -12,43 +7,61 @@ import CalendarFooter from './cdrFooter';
 import CalendarSideBar from './cdrSideBar';
 import CalendarBlock from './cdrBlock';
 
-export default function CalendarMonth() {
-    let {year} = useParams();
-    let {month} = useParams();
+export default class CalendarMonth extends React.Component {
+    constructor(props) {
+        super(props);
+        this.year = props.match.params.year;
+        this.year = parseInt(this.year);
+        this.month = props.match.params.month;
+        this.month = parseInt(this.month);
+        console.log("Month is", this.month)
+        this.curDate = new Date(this.year, this.month);
+        this.emptyCells = this.curDate.getDay();
+        this.bricks = this.fillBricks();
 
-    if ((year === undefined) && (month === undefined)){
-        year = new Date().getFullYear();
-        month = new Date().getMonth();
+        if(this.emptyCells !== 6) {
+            this.fillWithEmpty(this.bricks, this.emptyCells);
+        }
     }
 
-    var bricks = [];
-
-    var curDate = new Date(Number(year), Number(month))
-
-    for (let i = 1; i < getDaysInMonth(month, year) + 1; i++) {
-        bricks.push({
-            date: new Date(year, month, i),
-            task: {
-                taskName: "a" + i,
-                taskDescription: "b" + i
-            }
-        })
+    fillBricks() {
+        var arr = [];
+        for (let i = 1; i <= this.getDaysInMonth(this.month + 1, this.year); i++) {
+            arr.push({
+                date: new Date(this.year, this.month, i),
+                task: {},
+                isEmpty: false
+            })
+        }
+        return arr;
     }
-    return (
-        <div className="calendar-container">
-            <CalendarHeader date={curDate}></CalendarHeader>
-            <CalendarSideBar date={curDate}></CalendarSideBar>
-            <div class="calendar-grid-container">
-                {bricks.map((brick)=>(
-                    <CalendarBlock blockInfo={brick}></CalendarBlock>
-                ))}
+
+    fillWithEmpty(arr, num) {
+        for (let j = 0; j <= num; j++) {
+            arr.push({
+                date: new Date(this.year, this.month, j),
+                task: {},
+                isEmpty: true
+            })
+        }
+    }
+
+    getDaysInMonth(month,year) {
+        return new Date(year, month, 0).getDate();
+    }
+
+    render() {
+        return (
+            <div className="calendar-container">
+                <CalendarHeader date={this.curDate}></CalendarHeader>
+                <CalendarSideBar date={this.curDate}></CalendarSideBar>
+                <div class="calendar-grid-container">
+                    {this.bricks.map((brick)=>(
+                        <CalendarBlock blockInfo={brick}></CalendarBlock>
+                    ))}
+                </div>
+                <CalendarFooter description={this.bricks[0]}></CalendarFooter>
             </div>
-            <CalendarFooter description={bricks[0]}></CalendarFooter>
-        </div>
-    );
+        )
+    }
 }
-
-var getDaysInMonth = function(month,year) {
-   return new Date(year, month, 0).getDate();
-}
-
