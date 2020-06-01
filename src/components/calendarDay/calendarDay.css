@@ -1,0 +1,11 @@
+.task-table{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+
+    background-color: white;
+    border-radius: 7px;
+    border-style: solid;
+    padding: 10px;
+    border-color: cadetblue;
+}
