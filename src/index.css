@@ -5,9 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
+=======
+  background-color: gainsboro;
+>>>>>>> 4eb880b46e178a82412f04f590605dedd508a2ae
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4eb880b46e178a82412f04f590605dedd508a2ae
