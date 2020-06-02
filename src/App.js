@@ -1,41 +1,10 @@
 import React from 'react';
-<<<<<<< HEAD
-
-=======
->>>>>>> 4eb880b46e178a82412f04f590605dedd508a2ae
 import {
   BrowserRouter as Router,
   Switch,
   Route
 }from "react-router-dom";
 
-<<<<<<< HEAD
-import Home from "./home";
-import CalendarYear from "./calendarYear"
-import CalendarMonth from './calendarMonth';
-import CalendarDay from './calendarDay';
-        
-function App() {
-  return (
-    // <div>
-    //   <CalendarMonth></CalendarMonth>
-    // </div>
-    <Router>
-      <div className="background">
-        <Switch>
-          <Route exact path="/" children={<CalendarMonth />}>
-          </Route>
-          <Route exact path="/:year" children={<CalendarYear />}>
-          </Route>
-          <Route exact path="/:year/:month" children={<CalendarMonth />}>
-          </Route>
-          <Route exact path="/:year/:month/:day" children={<CalendarDay />}>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-=======
 import Home from './components/home/home';
 import CalendarYear from './components/calendarYear/calendarYear';
 import CalendarMonth from './components/calendarMonth/calendarMonth';
@@ -163,7 +132,6 @@ class App extends React.Component {
       </Router>
     );
   }
->>>>>>> 4eb880b46e178a82412f04f590605dedd508a2ae
 }
 
 export default App;
